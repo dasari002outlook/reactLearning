@@ -17,7 +17,7 @@ export default function TravelLanding(){
     return <div className="app">
                 <Logo />
                 <Form onAddItems={handleAddItem} />
-                <PackingList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem}/>
+                <PackingList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} setItems={setItems}/>
                 <Stats items={items} />
             </div>
   
@@ -61,17 +61,40 @@ function Form({onAddItems}){
 //     { id: 2, description: "Socks", quantity: 12, packed: false },
 //     { id: 3, description: "Charger", quantity: 1, packed: true },
 //   ];
-function PackingList({items, onDeleteItem, onToggleItem}){
+function PackingList({items, onDeleteItem, setItems, onToggleItem}){
    
+    const [sortBy, setSortBy] = useState('input');
+    let sortedItems;
+
+    if(sortBy === 'input'){sortedItems = items;
+    }else if(sortBy === 'description'){
+        sortedItems = items.slice().sort((a, b) => a.description.localeCompare(b.description));
+    }else if(sortBy === 'packed'){
+        sortedItems = items.slice().sort((a, b) => Number(b.packed) - Number(a.packed));
+    }
+
+    function onDeleteItems(){
+        if(window.confirm('Are you sure you want to delete all items?')){
+            setItems([]);
+        }
+    }
     return(
      <div className="list">
     <ul>
         {
-           items.map((item) => (
+           sortedItems.map((item) => (
             <Item item={item} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} key={item.id} />
            ))
         }        
         </ul>
+        <div className="actions">
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+                <option value="input">Sort By Input Order</option>
+                <option value="description">Sort By Description</option>
+                <option value="packed">Sort By Packed Status</option>                
+            </select>
+            <button onClick={() => onDeleteItems()}>Clear List</button>
+        </div>
         </div>)
 }
 
