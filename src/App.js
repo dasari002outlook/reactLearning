@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Dates from "./components/Dates";
-import TravelLanding from "./components/TravelLanding";
-import FlashCards from "./components/FlashCards";
+import Dates from "./components/DateComponent/Dates";
+import TravelLanding from "./components/TravelLandComponents/TravelLanding";
+import FlashCards from "./components/FlashCardComponents/FlashCards";
+import Accordion from "./components/AccordionComponent/Accordion";
 
 const messages = [
   "Learn React ⚛️",
@@ -41,6 +42,7 @@ export default function App(){
 
     <TravelLanding />
     <FlashCards />
+    <Accordion />
     </>
 }
 
