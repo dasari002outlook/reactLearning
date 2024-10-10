@@ -14,7 +14,7 @@
     cursor: pointer;
     border-top: 4px solid #fff;
     border-bottom: 4px solid #fff;
-  
+    background-color: #F9E8F3;
     display: grid;
     grid-template-columns: auto 1fr auto;
     column-gap: 24px;
@@ -27,6 +27,7 @@
     font-weight: 500;
     color: #ced4da;
   }
+
   
   .title,
   .icon {
@@ -52,11 +53,11 @@
   
   /* OPEN STATE */
   .open {
-    border-top: 4px solid #087f5b;
+    border-top: 4px solid #FF27B7;
   }
   
   .open .number,
   .open .text {
-    color: #087f5b;
+    color: #FF27B7;
   }
   

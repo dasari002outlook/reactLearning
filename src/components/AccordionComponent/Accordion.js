@@ -4,7 +4,7 @@ import { useState } from 'react';
   export default function Accordion({data}) {
     return <div>
         <h1>Accordion FAQs</h1>
-        <div className="accordion">
+        <div className="accordion accCunt">
          { data.map((d, i) => <AccordionItem key={i} num ={i} title={d.title} text={d.text} />)}
         </div>
     </div>;
