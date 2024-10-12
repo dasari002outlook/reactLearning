@@ -31,10 +31,7 @@ export default function Steps() {
             <div className={`${step >= 2 ? "active" : ""}`}>2</div>
             <div className={`${step >= 3 ? "active" : ""}`}>3</div>
           </div>
-          <p className="message">
-            {" "}
-            Step {step}: {messages[step - 1]}
-          </p>
+          <StepMessage step={step}><p>{messages[step - 1]}</p></StepMessage>
           <div className="buttons">
             <Button bgColor="#7950f2" textColor="#fff" onClick={handlePrevious}>
               {" "}
@@ -50,5 +47,10 @@ export default function Steps() {
     </>
   );
 
-  function StepMessage() {}
+  function StepMessage({step, children}) {
+    return    <div className="message">
+      <h3>Step {step}</h3>
+      {children}
+  </div>
+  }
 }
