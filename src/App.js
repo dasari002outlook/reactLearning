@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import Dates from "./components/DateComponent/Dates";
 import TravelLanding from "./components/TravelLandComponents/TravelLanding";
 import FlashCards from "./components/FlashCardComponents/FlashCards";
@@ -8,12 +8,8 @@ import Time from "./components/ResuableComponents/Time";
 import Calci from "./components/ResuableComponents/Calci";
 import FetchTodo from "./components/ResuableComponents/FetchTodo";
 import TodoList from "./components/ResuableComponents/TodoList";
+import Steps from "./components/StepsComponent/Steps";
 
-const messages = [
-  "Learn React ⚛️",
-  "Apply for jobs 💼",
-  "Invest your new income 🤑",
-];
 
 const faqs = [
   {
@@ -95,3 +91,19 @@ export default function App() {
     </>
   );
 }
+export default function App(){
+
+   return(
+    <>
+    <Steps/>
+    <Dates  />
+    <TravelLanding />
+    <FlashCards />
+    <Accordion data={faqs}/>
+    </>
+   );    
+    
+}
+
+
+
