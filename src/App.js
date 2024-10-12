@@ -8,7 +8,6 @@ import Calci from "./components/ResuableComponents/Calci";
 import FetchTodo from "./components/ResuableComponents/FetchTodo";
 import TodoList from "./components/ResuableComponents/TodoList";
 import Steps from "./components/StepsComponent/Steps";
-import { useState } from "react";
 
 const faqs = [
   {
@@ -26,21 +25,10 @@ const faqs = [
 ];
 
 export default function App() {
-  const [step, setStep] = useState(1);
-  const [isOpen, setIsOpen] = useState(true);
-
-  function handlePrevious() {
-    if (step > 1) setStep((s) => s - 1);
-  }
-  function handleNext() {
-    if (step < 3) {
-      setStep((s) => s + 1);
-    }
-  }
   return (
     <>
-      <Dates />
       <Steps />
+      <Dates />
       <TravelLanding />
       <FlashCards />
       <Accordion data={faqs} />
