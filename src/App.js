@@ -1,4 +1,3 @@
-
 import Dates from "./components/DateComponent/Dates";
 import TravelLanding from "./components/TravelLandComponents/TravelLanding";
 import FlashCards from "./components/FlashCardComponents/FlashCards";
@@ -9,7 +8,7 @@ import Calci from "./components/ResuableComponents/Calci";
 import FetchTodo from "./components/ResuableComponents/FetchTodo";
 import TodoList from "./components/ResuableComponents/TodoList";
 import Steps from "./components/StepsComponent/Steps";
-
+import { useState } from "react";
 
 const faqs = [
   {
@@ -40,38 +39,8 @@ export default function App() {
   }
   return (
     <>
-      <button className="close" onClick={() => setIsOpen((isOp) => !isOp)}>
-        &times;
-      </button>
-      {isOpen && (
-        <div className="steps">
-          <div className="numbers">
-            <div className={`${step >= 1 ? "active" : ""}`}>1</div>
-            <div className={`${step >= 2 ? "active" : ""}`}>2</div>
-            <div className={`${step >= 3 ? "active" : ""}`}>3</div>
-          </div>
-          <p className="message">
-            {" "}
-            Step {step}: {messages[step - 1]}
-          </p>
-          <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
-              onClick={handlePrevious}
-            >
-              Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
-              onClick={handleNext}
-            >
-              Next
-            </button>
-          </div>
-        </div>
-      )}
       <Dates />
-
+      <Steps />
       <TravelLanding />
       <FlashCards />
       <Accordion data={faqs} />
@@ -91,19 +60,3 @@ export default function App() {
     </>
   );
 }
-export default function App(){
-
-   return(
-    <>
-    <Steps/>
-    <Dates  />
-    <TravelLanding />
-    <FlashCards />
-    <Accordion data={faqs}/>
-    </>
-   );    
-    
-}
-
-
-
