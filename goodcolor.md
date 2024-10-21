@@ -11,3 +11,7 @@
 #FED02e
 #F9f5E8
 #8548dc
+ --color-lightest: #fff4e6;
+    --color-light: #ffe8cc;
+    --color-medium: #ffa94d;
+    --color-dark: #ff922b;

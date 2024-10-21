@@ -5,9 +5,11 @@ import Accordion from "./components/AccordionComponent/Accordion";
 import Day from "./components/ResuableComponents/Day";
 import Time from "./components/ResuableComponents/Time";
 import Calci from "./components/ResuableComponents/Calci";
-import FetchTodo from "./components/ResuableComponents/FetchTodo";
+
 import TodoList from "./components/ResuableComponents/TodoList";
 import Steps from "./components/StepsComponent/Steps";
+import TipComponent from "./components/TipCalciComponent/TipComponent";
+import SplitBillApp from "./components/SplitBillApp/SplitBillApp";
 
 const faqs = [
   {
@@ -27,9 +29,10 @@ const faqs = [
 export default function App() {
   return (
     <>
+       <TravelLanding />
       <Steps />
       <Dates />
-      <TravelLanding />
+    
       <FlashCards />
       <Accordion data={faqs} />
       <div>
@@ -45,6 +48,8 @@ export default function App() {
       <div>
         <TodoList />
       </div>
+      <TipComponent />
+      <SplitBillApp/>
     </>
   );
 }
